@@ -435,7 +435,26 @@
     <div id="downloads-section" class="page-section">
         <div class="downloads-container">
             <div class="download-buttons-wrapper">
-                <a href="https://www.mediafire.com/file/avo2ctzx764fb5l/Eyez.zip/file" rel="nofollow" target="_blank" download="Eyez.zip" class="big-download-btn btn-game-zip" onclick="registerDownload()">
+
+<a href="#" class="big-download-btn btn-game-zip" onclick="descarcaFaraParasire(event)">Descarcă text</a>
+
+<script>
+function descarcaFaraParasire(event) {
+    event.preventDefault(); // Oprește linkul din a naviga
+    
+    // Rulează funcția ta inițială de înregistrare dacă este nevoie
+    if (typeof registerDownload === "function") { registerDownload(); } 
+    
+    // Creează un element invizibil care descarcă fișierul în fundal
+    const linkAscuns = document.createElement('a');
+    linkAscuns.href = "https://mediafire.com";
+    linkAscuns.download = "Eyez.zip";
+    
+    document.body.appendChild(linkAscuns);
+    linkAscuns.click();
+    document.body.removeChild(linkAscuns);
+}
+</script>
 
                     <span class="lang-ro">Descarcă Eyez.zip (Joc)</span>
                     <span class="lang-en">Download Eyez.zip (Game)</span>
